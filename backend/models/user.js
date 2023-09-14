@@ -1,14 +1,16 @@
 import { Book } from "./book";
+import { Message } from "./message";
 
 class User {
+
     constructor(name, email, password, city, state, country) {
         this.name = name;
-        this.validateEmail(email);
+        this.email = email;
         this.password = password;
         this.city = city;
         this.state = state;
         this.country = country;
-        this.messages = [];
+        this.messages = {};
         this.bookshelf = []
     }
 
@@ -24,7 +26,7 @@ class User {
     logIn(email, password) {
         if (email === this.email && password === this.password) {
             console.log("Login realizado com sucesso!")
-            localStorage.setItem('escambooks:user-name', User.name)
+            localStorage.setItem('escambooks:user-name', this.name)
             return true
         } else {
             console.log("Login inválido. Verifique os dados informados e tente novamente!")
@@ -44,6 +46,16 @@ class User {
         this.bookshelf.push(newBook);
 
         console.log(`Livro "${newBook.title}" adicionado à prateleira.`);
+    }
+
+    sendNewMessage(receiverEmail, text) {
+        if (!this.messages[receiverEmail]) {
+            this.messages[receiverEmail] = []; 
+        }
+        
+        const message = new Message(this.email, receiverEmail, text);
+        this.messages[receiverEmail].push(message); 
+        console.log(`Mensagem de "${this.email}" para "${receiverEmail}" enviada.`);
     }
 
 

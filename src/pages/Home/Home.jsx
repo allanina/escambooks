@@ -1,13 +1,9 @@
-import Book from "../../components/Book/Book";
 
 function Home() {
   return (
     <div className="home">
       <div className="bookshelf-container">
-        <Book />
-        <Book />
-        <Book />
-        <Book />
+        <span>home</span>
       </div>
     </div>
   );

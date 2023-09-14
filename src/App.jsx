@@ -1,13 +1,16 @@
 import "./App.css";
-import Navbar from "./frontend/components/Navbar/Navbar";
-import Home from "./frontend/pages/Home/Home";
+import Navbar from "./components/Navbar/Navbar";
+import Sidebar from "./components/Sidebar/Sidebar"
+import ProjectRoutes from './routes/routes'
+
 
 function App() {
   return (
     <div className="body">
       <Navbar />
-      <div className="app-container">
-        <Home />
+      <div className="page-body">
+        <Sidebar />
+        <div className="routes-container"><ProjectRoutes /></div>
       </div>
     </div>
   );

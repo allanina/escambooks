@@ -1,11 +1,10 @@
-import Sidebar from "../Sidebar/Sidebar";
 import Logo from "../logo/Logo";
 
 function Navbar() {
   return (
     <>
       <nav className="navbar">
-        <section className="logo-container">
+        <section className="navbar-logo-container">
           <Logo />
           <input
             className="search-input"
@@ -18,7 +17,7 @@ function Navbar() {
           <span className="profile-user-name">Elle Woods</span>
         </section>
       </nav>
-      <Sidebar />
+      
     </>
   );
 }

@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { sidebarData } from "../../utils/sidebarData";
 import Home from "/static/messages-icon.svg";
 
@@ -8,7 +9,7 @@ function Sidebar() {
         {sidebarData.map((item) => (
           <li className="sidebar-option-container" key={item.title}>
             <img src={item.icon} alt={item.title} className="sidebar-icon" />
-            <span>{item.title}</span>
+            <Link to={item.path}>{item.title}</Link>
           </li>
         ))}
         <section className="sidebar-logout-container">

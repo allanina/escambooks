@@ -9,7 +9,8 @@
   background-color: #f5d6ac;
   height: 100vh;
   width: 100vw;
-  overflow: hidden;
+  display: flex;
+  flex-direction: column;
 }
 
 /*componente logo*/
@@ -17,6 +18,7 @@
   width: 300px;
   display: flex;
   align-items: center;
+  margin-right: 30px;
 }
 
 .logo-text {
@@ -49,7 +51,6 @@
   display: flex;
   flex-direction: column;
   padding-left: 34px;
-  padding-top: 80px;
 }
 
 .sidebar-option-container {
@@ -100,7 +101,7 @@
   padding: 34px;
 }
 
-.logo-container {
+.navbar-logo-container {
   width: 50%;
   display: flex;
   align-items: center;
@@ -151,10 +152,31 @@
 .home {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
+  width: 73%;
+  height: 95%;
 }
 
 /*app*/
 
 .app-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+/*sidebar e home*/
+
+.page-body {
+  display: flex;  
+  align-items: flex-start;
+  justify-content: flex-start;
+  overflow: hidden;
+}
+
+.routes-container {
+  display: flex;
+  width: 100%;
+  height: 100%;
 }

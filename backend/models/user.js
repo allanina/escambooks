@@ -1,8 +1,7 @@
-import { Book } from "./book";
-import { Message } from "./message";
+import { Book } from "./book.js";
+import { Message } from "./message.js";
 
 class User {
-
     constructor(name, email, password, city, state, country) {
         this.name = name;
         this.email = email;
@@ -14,13 +13,6 @@ class User {
         this.bookshelf = []
     }
 
-    validateEmail(email) {
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-        if (!emailRegex.test(email)) {
-            throw new Error("Email inválido. Verifique as informações e tente novamente")
-        }
-    }
 
 
     logIn(email, password) {
@@ -50,11 +42,11 @@ class User {
 
     sendNewMessage(receiverEmail, text) {
         if (!this.messages[receiverEmail]) {
-            this.messages[receiverEmail] = []; 
+            this.messages[receiverEmail] = [];
         }
-        
+
         const message = new Message(this.email, receiverEmail, text);
-        this.messages[receiverEmail].push(message); 
+        this.messages[receiverEmail].push(message);
         console.log(`Mensagem de "${this.email}" para "${receiverEmail}" enviada.`);
     }
 

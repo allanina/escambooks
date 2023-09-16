@@ -1,5 +1,6 @@
-import { Book } from "./book.js";
-import { Message } from "./message.js";
+const { Book } = require("./book.js")
+const { Message } = require("./message.js")
+
 
 class User {
     constructor(name, email, password, city, state, country) {
@@ -18,7 +19,6 @@ class User {
     logIn(email, password) {
         if (email === this.email && password === this.password) {
             console.log("Login realizado com sucesso!")
-            localStorage.setItem('escambooks:user-name', this.name)
             return true
         } else {
             console.log("Login inválido. Verifique os dados informados e tente novamente!")
@@ -53,4 +53,4 @@ class User {
 
 }
 
-export { User }
+module.exports = { User }

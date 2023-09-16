@@ -23,4 +23,4 @@ class UserRepository {
     }
 }
 
-export { UserRepository }
+module.exports = { UserRepository }

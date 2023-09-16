@@ -20,4 +20,4 @@ class Message {
     }
 }
 
-export { Message }
+module.exports = { Message }

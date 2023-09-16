@@ -10,4 +10,5 @@ class Book {
 
 }
 
-export { Book }
+
+module.exports = { Book }
